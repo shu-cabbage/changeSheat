@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>席替え</title>
+        <style id="style"></style>
+        <style>
+            body{
+                text-align: center;
+            }
+            table{
+                border-collapse: separate;
+                border-spacing: 20px;
+            }
+            td{
+                border: 1px solid #000000;
+                width: 200px;
+                height: 60px;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin: 0px auto; position: relative;" id="div_body" class="div_body">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <td style="border: none;"></td>
+                        <td style="border: none;"></td>
+                        <td style="font-size: 20px;">教卓</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="sheat0">
+                            <label for="static_sheat_position_0">席0:</label>
+                            <select id="static_sheat_position_0" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat1">
+                            <label for="static_sheat_position_1">席1:</label>
+                            <select id="static_sheat_position_1" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat2">
+                            <label for="static_sheat_position_2">席2:</label>
+                            <select id="static_sheat_position_2" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat3">
+                            <label for="static_sheat_position_3">席3:</label>
+                            <select id="static_sheat_position_3" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat4">
+                            <label for="static_sheat_position_4">席4:</label>
+                            <select id="static_sheat_position_4" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="sheat5">
+                            <label for="static_sheat_position_5">席5:</label>
+                            <select id="static_sheat_position_5" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat6">
+                            <label for="static_sheat_position_6">席6:</label>
+                            <select id="static_sheat_position_6" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat7">
+                            <label for="static_sheat_position_7">席7:</label>
+                            <select id="static_sheat_position_7" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat8">
+                            <label for="static_sheat_position_8">席8:</label>
+                            <select id="static_sheat_position_8" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat9">
+                            <label for="static_sheat_position_9">席9:</label>
+                            <select id="static_sheat_position_9" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="sheat10">
+                            <label for="static_sheat_position_10">席10:</label>
+                            <select id="static_sheat_position_10" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat11">
+                            <label for="static_sheat_position_11">席11:</label>
+                            <select id="static_sheat_position_11" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat12">
+                            <label for="static_sheat_position_12">席12:</label>
+                            <select id="static_sheat_position_12" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat13">
+                            <label for="static_sheat_position_13">席13:</label>
+                            <select id="static_sheat_position_13" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                        <td id="sheat14">
+                            <label for="static_sheat_position_14">席14:</label>
+                            <select id="static_sheat_position_14" class="select_static_student" onchange="set_sheat(event)"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="sheat15">席15</td>
+                        <td id="sheat16">席16</td>
+                        <td id="sheat17">席17</td>
+                        <td id="sheat18">席18</td>
+                        <td id="sheat19">席19</td>
+                    </tr>
+                    <tr>
+                        <td id="sheat20">席20</td>
+                        <td id="sheat21">席21</td>
+                        <td id="sheat22">席22</td>
+                        <td id="sheat23">席23</td>
+                        <td id="sheat24">席24</td>
+                    </tr>
+                    <tr>
+                        <td id="sheat25">席25</td>
+                        <td id="sheat26">席26</td>
+                        <td id="sheat27">席27</td>
+                        <td id="sheat28">席28</td>
+                        <td id="sheat29">席29</td>
+                    </tr>
+                    <tr>
+                        <td id="sheat30">席30</td>
+                        <td id="sheat31">席31</td>
+                        <td id="sheat32">席32</td>
+                        <td id="sheat33">席33</td>
+                        <td id="sheat34">席34</td>
+                    </tr>
+                    <tr>
+                        <td id="sheat35">席35</td>
+                        <td id="sheat36">席36</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 100px; position: relative;" class="buttn_arr">
+            <button style="font-size: 40px;" onclick="sheat_shuffle()">shuffle</button>
+            <p>chrome推奨</p>
+            <button style="font-size: 20px; position: absolute; right: 150px; bottom: 0;" onclick="sheat_print(event)" value="student">印刷(学生)</button>
+            <button style="font-size: 20px; position: absolute; right: 30px; bottom: 0;" onclick="sheat_print(event)" value="teacher">印刷(教員)</button>
+        </div>
+    </body>
+
+    <script>
+        function sheat_print(event){
+            let print_css = `
+            @media print{
+                @page{
+                    size: A4 landscape;
+                    margin: 0mm;
+                }
+                .buttn_arr{
+                    display: none;
+                }
+            `;
+            if(event.target.value == "teacher"){
+                print_css += `
+                #table td{
+                    /*display: inline-block;*/     /* インラインブロック化 */
+                    transform: rotate( 180deg );
+                    -moz-transform:    rotate( 180deg );  /* Firefox用 */
+                    -webkit-transform: rotate( 180deg );  /* Chrome,Safari,新しいOpera用 */
+                    -o-transform:      rotate( 180deg );  /* 古いOpera用 */
+                    -ms-transform:     rotate( 180deg );  /* IE9用 */
+                }`;
+            }
+            print_css += `
+            }`;
+            document.querySelector("#style").insertAdjacentHTML("beforeend", print_css);
+            window.print();
+        }
+        
+        let data = [ //{席位置, 固定, 名前}
+            {"sheat_position": 100, "isStatic": false, "name": "01"},
+            {"sheat_position": 100, "isStatic": false, "name": "02"},
+            {"sheat_position": 100, "isStatic": false, "name": "03"},
+            {"sheat_position": 100, "isStatic": false, "name": "04"},
+            {"sheat_position": 100, "isStatic": false, "name": "05"},
+            {"sheat_position": 100, "isStatic": false, "name": "06"},
+            {"sheat_position": 100, "isStatic": false, "name": "07"},
+            {"sheat_position": 100, "isStatic": false, "name": "08"},
+            {"sheat_position": 100, "isStatic": false, "name": "09"},
+            {"sheat_position": 100, "isStatic": false, "name": "10"},
+            {"sheat_position": 100, "isStatic": false, "name": "11"},
+            {"sheat_position": 100, "isStatic": false, "name": "12"},
+            {"sheat_position": 100, "isStatic": false, "name": "13"},
+            {"sheat_position": 100, "isStatic": false, "name": "14"},
+            {"sheat_position": 100, "isStatic": false, "name": "15"},
+            {"sheat_position": 100, "isStatic": false, "name": "16"},
+            {"sheat_position": 100, "isStatic": false, "name": "17"},
+            {"sheat_position": 100, "isStatic": false, "name": "18"},
+            {"sheat_position": 100, "isStatic": false, "name": "19"},
+            {"sheat_position": 100, "isStatic": false, "name": "20"},
+            {"sheat_position": 100, "isStatic": false, "name": "21"},
+            {"sheat_position": 100, "isStatic": false, "name": "22"},
+            {"sheat_position": 100, "isStatic": false, "name": "23"},
+            {"sheat_position": 100, "isStatic": false, "name": "24"},
+            {"sheat_position": 100, "isStatic": false, "name": "25"},
+            {"sheat_position": 100, "isStatic": false, "name": "26"},
+            {"sheat_position": 100, "isStatic": false, "name": "27"},
+            {"sheat_position": 100, "isStatic": false, "name": "28"},
+            {"sheat_position": 100, "isStatic": false, "name": "29"},
+            {"sheat_position": 100, "isStatic": false, "name": "30"},
+            {"sheat_position": 100, "isStatic": false, "name": "31"},
+            {"sheat_position": 100, "isStatic": false, "name": "32"},
+            {"sheat_position": 100, "isStatic": false, "name": "33"},
+            {"sheat_position": 100, "isStatic": false, "name": "34"},
+            {"sheat_position": 100, "isStatic": false, "name": "35"},
+            {"sheat_position": 100, "isStatic": false, "name": "36"},
+            {"sheat_position": 100, "isStatic": false, "name": "37"},
+        ];
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("div_body").style.width = document.getElementById("table").clientWidth + "px";
+            let selects = document.querySelectorAll(".select_static_student");
+
+            selects.forEach(datas => {
+                let option = document.createElement("option");
+                option.textContent = "固定の名前";
+                datas.appendChild(option);
+                for(let i = 0; i < data.length; i++){
+                    let options = document.createElement("option");
+                    options.textContent = data[i].name;
+                    datas.appendChild(options);
+                }
+            });
+        });
+
+        function set_sheat(e){
+            let static_student_name = document.getElementById(e.target.id);
+            if(document.getElementById(e.target.id).options.selectedIndex == 0){
+                data[static_student_name.dataset.index - 1].isStatic = false;
+                data[static_student_name.dataset.index - 1].sheat_position = 100;
+                static_student_name.dataset.index = 0;
+            }else{
+                for(let i = 0; i < data.length; i++){
+                    if(data[i].name == static_student_name.value){
+                        if(data[i].isStatic !== true){
+                            data[i].isStatic = true;
+                            data[i].sheat_position = e.target.id.split("_")[3];
+                            static_student_name.dataset.index = document.getElementById(e.target.id).options.selectedIndex;
+                            return;
+                        }else{
+                            document.getElementById(e.target.id).options.selectedIndex = 0;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        let dynamic_sheat_arr = []
+        let once_set_sheat_status = false;
+        function sheat_shuffle(){
+            if(!once_set_sheat_status){
+                let sheat_num = 0;
+                for(let i = 0; i < data.length; i++){
+                    if(data[i].isStatic === false){
+                        let once_set_sheat = function (){
+                            for(let j = 0; j < data.length; j++){
+                                if(data[j].sheat_position == sheat_num){
+                                    sheat_num++;
+                                    return once_set_sheat();
+                                }else if(j == data.length - 1){
+                                    data[i].sheat_position = sheat_num;
+                                    eval("document.getElementById('sheat" + sheat_num + "').textContent = '" + data[i].name + "';");
+                                    dynamic_sheat_arr.push(data[i]);
+                                }
+                            }
+                        }
+                        once_set_sheat();
+                        sheat_num++;
+                    }else{
+                        eval("document.getElementById('sheat" + data[i].sheat_position + "').textContent = '" + data[i].name + "';");
+                    }
+                }
+                once_set_sheat_status = true;
+            }
+
+            let i = 0;
+            let timerID = setInterval(() => {
+                if(i > 30){
+                    clearInterval(timerID);
+                }
+                let max = dynamic_sheat_arr.length - 1;
+                let change_sheat_1 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_2 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_3 = Math.floor(Math.random() * (max + 1));  //28を除外したい
+                let change_sheat_4 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_5 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_6 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_7 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_8 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_9 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_10 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_11 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_12 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_13 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_14 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_15 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_16 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_17 = Math.floor(Math.random() * (max + 1));
+                let change_sheat_18 = Math.floor(Math.random() * (max + 1));
+                [dynamic_sheat_arr[change_sheat_1].sheat_position, dynamic_sheat_arr[change_sheat_2].sheat_position] = [dynamic_sheat_arr[change_sheat_2].sheat_position, dynamic_sheat_arr[change_sheat_1].sheat_position];
+                [dynamic_sheat_arr[change_sheat_3].sheat_position, dynamic_sheat_arr[change_sheat_4].sheat_position] = [dynamic_sheat_arr[change_sheat_4].sheat_position, dynamic_sheat_arr[change_sheat_3].sheat_position];
+                [dynamic_sheat_arr[change_sheat_5].sheat_position, dynamic_sheat_arr[change_sheat_6].sheat_position] = [dynamic_sheat_arr[change_sheat_6].sheat_position, dynamic_sheat_arr[change_sheat_5].sheat_position];
+                [dynamic_sheat_arr[change_sheat_7].sheat_position, dynamic_sheat_arr[change_sheat_8].sheat_position] = [dynamic_sheat_arr[change_sheat_8].sheat_position, dynamic_sheat_arr[change_sheat_7].sheat_position];
+                [dynamic_sheat_arr[change_sheat_9].sheat_position, dynamic_sheat_arr[change_sheat_10].sheat_position] = [dynamic_sheat_arr[change_sheat_10].sheat_position, dynamic_sheat_arr[change_sheat_9].sheat_position];
+                [dynamic_sheat_arr[change_sheat_11].sheat_position, dynamic_sheat_arr[change_sheat_12].sheat_position] = [dynamic_sheat_arr[change_sheat_12].sheat_position, dynamic_sheat_arr[change_sheat_11].sheat_position];
+                [dynamic_sheat_arr[change_sheat_13].sheat_position, dynamic_sheat_arr[change_sheat_14].sheat_position] = [dynamic_sheat_arr[change_sheat_14].sheat_position, dynamic_sheat_arr[change_sheat_13].sheat_position];
+                [dynamic_sheat_arr[change_sheat_15].sheat_position, dynamic_sheat_arr[change_sheat_16].sheat_position] = [dynamic_sheat_arr[change_sheat_16].sheat_position, dynamic_sheat_arr[change_sheat_15].sheat_position];
+                [dynamic_sheat_arr[change_sheat_17].sheat_position, dynamic_sheat_arr[change_sheat_18].sheat_position] = [dynamic_sheat_arr[change_sheat_18].sheat_position, dynamic_sheat_arr[change_sheat_17].sheat_position];
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_1].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_1].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_2].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_2].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_3].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_3].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_4].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_4].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_5].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_5].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_6].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_6].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_7].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_7].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_8].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_8].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_9].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_9].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_10].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_10].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_11].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_11].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_12].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_12].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_13].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_13].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_14].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_14].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_15].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_15].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_16].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_16].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_17].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_17].name + "';");
+                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_18].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_18].name + "';");
+                i++;
+            }, 20);
+        }
+    </script>
+</html>
