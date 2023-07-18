@@ -162,6 +162,16 @@
                     -o-transform:      rotate( 180deg );  /* 古いOpera用 */
                     -ms-transform:     rotate( 180deg );  /* IE9用 */
                 }`;
+            }else{
+                print_css += `
+                #table td{
+                    /*display: inline-block;*/     /* インラインブロック化 */
+                    transform: rotate( 0deg );
+                    -moz-transform:    rotate( 0deg );  /* Firefox用 */
+                    -webkit-transform: rotate( 0deg );  /* Chrome,Safari,新しいOpera用 */
+                    -o-transform:      rotate( 0deg );  /* 古いOpera用 */
+                    -ms-transform:     rotate( 0deg );  /* IE9用 */
+                }`;
             }
             print_css += `
             }`;
