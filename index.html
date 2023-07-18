@@ -123,7 +123,7 @@
                         <td id="sheat31">席31</td>
                         <td id="sheat32">席32</td>
                         <td id="sheat33">席33</td>
-                        <td id="sheat34">席34</td>
+                        <td id="sheat34">28</td>
                     </tr>
                     <tr>
                         <td id="sheat35">席35</td>
@@ -197,7 +197,7 @@
             {"sheat_position": 100, "isStatic": false, "name": "25"},
             {"sheat_position": 100, "isStatic": false, "name": "26"},
             {"sheat_position": 100, "isStatic": false, "name": "27"},
-            {"sheat_position": 100, "isStatic": false, "name": "28"},
+            {"sheat_position": 34, "isStatic": true, "name": "28"},
             {"sheat_position": 100, "isStatic": false, "name": "29"},
             {"sheat_position": 100, "isStatic": false, "name": "30"},
             {"sheat_position": 100, "isStatic": false, "name": "31"},
@@ -262,7 +262,7 @@
                                     return once_set_sheat();
                                 }else if(j == data.length - 1){
                                     data[i].sheat_position = sheat_num;
-                                    eval("document.getElementById('sheat" + sheat_num + "').textContent = '" + data[i].name + "';");
+                                    document.getElementById('sheat' + sheat_num).textContent = data[i].name;
                                     dynamic_sheat_arr.push(data[i]);
                                 }
                             }
@@ -270,7 +270,7 @@
                         once_set_sheat();
                         sheat_num++;
                     }else{
-                        eval("document.getElementById('sheat" + data[i].sheat_position + "').textContent = '" + data[i].name + "';");
+                        document.getElementById('sheat' + data[i].sheat_position).textContent = data[i].name;
                     }
                 }
                 once_set_sheat_status = true;
@@ -281,54 +281,36 @@
                 if(i > 30){
                     clearInterval(timerID);
                 }
-                let max = dynamic_sheat_arr.length - 1;
-                let change_sheat_1 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_2 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_3 = Math.floor(Math.random() * (max + 1));  //28を除外したい
-                let change_sheat_4 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_5 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_6 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_7 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_8 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_9 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_10 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_11 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_12 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_13 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_14 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_15 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_16 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_17 = Math.floor(Math.random() * (max + 1));
-                let change_sheat_18 = Math.floor(Math.random() * (max + 1));
-                [dynamic_sheat_arr[change_sheat_1].sheat_position, dynamic_sheat_arr[change_sheat_2].sheat_position] = [dynamic_sheat_arr[change_sheat_2].sheat_position, dynamic_sheat_arr[change_sheat_1].sheat_position];
-                [dynamic_sheat_arr[change_sheat_3].sheat_position, dynamic_sheat_arr[change_sheat_4].sheat_position] = [dynamic_sheat_arr[change_sheat_4].sheat_position, dynamic_sheat_arr[change_sheat_3].sheat_position];
-                [dynamic_sheat_arr[change_sheat_5].sheat_position, dynamic_sheat_arr[change_sheat_6].sheat_position] = [dynamic_sheat_arr[change_sheat_6].sheat_position, dynamic_sheat_arr[change_sheat_5].sheat_position];
-                [dynamic_sheat_arr[change_sheat_7].sheat_position, dynamic_sheat_arr[change_sheat_8].sheat_position] = [dynamic_sheat_arr[change_sheat_8].sheat_position, dynamic_sheat_arr[change_sheat_7].sheat_position];
-                [dynamic_sheat_arr[change_sheat_9].sheat_position, dynamic_sheat_arr[change_sheat_10].sheat_position] = [dynamic_sheat_arr[change_sheat_10].sheat_position, dynamic_sheat_arr[change_sheat_9].sheat_position];
-                [dynamic_sheat_arr[change_sheat_11].sheat_position, dynamic_sheat_arr[change_sheat_12].sheat_position] = [dynamic_sheat_arr[change_sheat_12].sheat_position, dynamic_sheat_arr[change_sheat_11].sheat_position];
-                [dynamic_sheat_arr[change_sheat_13].sheat_position, dynamic_sheat_arr[change_sheat_14].sheat_position] = [dynamic_sheat_arr[change_sheat_14].sheat_position, dynamic_sheat_arr[change_sheat_13].sheat_position];
-                [dynamic_sheat_arr[change_sheat_15].sheat_position, dynamic_sheat_arr[change_sheat_16].sheat_position] = [dynamic_sheat_arr[change_sheat_16].sheat_position, dynamic_sheat_arr[change_sheat_15].sheat_position];
-                [dynamic_sheat_arr[change_sheat_17].sheat_position, dynamic_sheat_arr[change_sheat_18].sheat_position] = [dynamic_sheat_arr[change_sheat_18].sheat_position, dynamic_sheat_arr[change_sheat_17].sheat_position];
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_1].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_1].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_2].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_2].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_3].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_3].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_4].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_4].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_5].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_5].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_6].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_6].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_7].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_7].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_8].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_8].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_9].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_9].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_10].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_10].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_11].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_11].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_12].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_12].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_13].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_13].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_14].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_14].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_15].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_15].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_16].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_16].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_17].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_17].name + "';");
-                eval("document.getElementById('sheat" + dynamic_sheat_arr[change_sheat_18].sheat_position + "').textContent = '" + dynamic_sheat_arr[change_sheat_18].name + "';");
+                for(let j = 0; j < 30; j++){
+                    let max = dynamic_sheat_arr.length - 1;
+                    let change_sheat_1 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_2 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_3 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_4 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_5 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_6 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_7 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_8 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_9 = Math.floor(Math.random() * (max + 1));
+                    let change_sheat_10 = Math.floor(Math.random() * (max + 1));
+                    [dynamic_sheat_arr[change_sheat_1].sheat_position, dynamic_sheat_arr[change_sheat_2].sheat_position] = [dynamic_sheat_arr[change_sheat_2].sheat_position, dynamic_sheat_arr[change_sheat_1].sheat_position];
+                    [dynamic_sheat_arr[change_sheat_3].sheat_position, dynamic_sheat_arr[change_sheat_4].sheat_position] = [dynamic_sheat_arr[change_sheat_4].sheat_position, dynamic_sheat_arr[change_sheat_3].sheat_position];
+                    [dynamic_sheat_arr[change_sheat_5].sheat_position, dynamic_sheat_arr[change_sheat_6].sheat_position] = [dynamic_sheat_arr[change_sheat_6].sheat_position, dynamic_sheat_arr[change_sheat_5].sheat_position];
+                    [dynamic_sheat_arr[change_sheat_7].sheat_position, dynamic_sheat_arr[change_sheat_8].sheat_position] = [dynamic_sheat_arr[change_sheat_8].sheat_position, dynamic_sheat_arr[change_sheat_7].sheat_position];
+                    [dynamic_sheat_arr[change_sheat_9].sheat_position, dynamic_sheat_arr[change_sheat_10].sheat_position] = [dynamic_sheat_arr[change_sheat_10].sheat_position, dynamic_sheat_arr[change_sheat_9].sheat_position];
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_1].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_1].name;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_2].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_2].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_3].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_3].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_4].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_4].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_5].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_5].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_6].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_6].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_7].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_7].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_8].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_8].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_9].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_9].name ;
+                    document.getElementById('sheat' + dynamic_sheat_arr[change_sheat_10].sheat_position ).textContent = dynamic_sheat_arr[change_sheat_10].name ;
+                }
                 i++;
-            }, 20);
+            }, 30);
         }
     </script>
 </html>
